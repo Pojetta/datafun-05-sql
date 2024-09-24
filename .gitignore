@@ -1,3 +1,5 @@
 .vsode/ 
 .venv/
 sql-functions.txt
+db_initialize_farris.py
+
