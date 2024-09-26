@@ -2,8 +2,9 @@
 
 SELECT * 
 FROM books 
-ORDER BY publication_year DESC;
+ORDER BY year_published DESC;
 
-SELECT * 
+SELECT DISTINCT * 
 FROM authors 
-ORDER BY name ASC;
+ORDER BY last ASC;
+

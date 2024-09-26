@@ -3,21 +3,23 @@
 # Import from Python Standard Library 
 import sqlite3
 import pathlib
+import logging
 
 # Import from external packages (requires virtual environment)
 import pandas as pd
 
 ###############################
-#Logging
+# Logging Configuration
 ###############################
-
 # Configure logging to write to a file, appending new logs to the existing file
-#logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='initialize_log.txt', 
+                    level=logging.INFO, 
+                    format='%(asctime)s - %(levelname)s - %(message)s', 
+                    filemode='a')
 
 ###############################
 # File Paths
 ###############################
-
 # Define paths using joinpath
 db_file_path = pathlib.Path("project.db")
 sql_file_path = pathlib.Path("sql").joinpath("create_tables.sql")
@@ -33,9 +35,11 @@ def verify_and_create_folders(paths):
     for path in paths:
         folder = path.parent
         if not folder.exists():
-            print(f"Creating folder: {folder}")
             folder.mkdir(parents=True, exist_ok=True)
+            logging.info(f"Created folder: {folder}")
+            print(f"Created folder: {folder}")
         else:
+            logging.info(f"Folder already exists: {folder}")
             print(f"Folder already exists: {folder}")
 
 def create_database(db_path):
@@ -43,8 +47,10 @@ def create_database(db_path):
     try:
         conn = sqlite3.connect(db_path)
         conn.close()
+        logging.info(f"Database created successfully at {db_path}")
         print("Database created successfully.")
     except sqlite3.Error as e:
+        logging.error(f"Error creating the database: {e}")
         print(f"Error creating the database: {e}")
 
 def create_tables(db_path, sql_file_path):
@@ -54,8 +60,10 @@ def create_tables(db_path, sql_file_path):
             with open(sql_file_path, "r") as file:
                 sql_script = file.read()
             conn.executescript(sql_script)
+            logging.info(f"Tables created successfully using {sql_file_path}")
             print("Tables created successfully.")
     except sqlite3.Error as e:
+        logging.error(f"Error creating tables: {e}")
         print(f"Error creating tables: {e}")
 
 def insert_data_from_csv(db_path, author_data_path, book_data_path):
@@ -66,8 +74,10 @@ def insert_data_from_csv(db_path, author_data_path, book_data_path):
         with sqlite3.connect(db_path) as conn:
             authors_df.to_sql("authors", conn, if_exists="replace", index=False)
             books_df.to_sql("books", conn, if_exists="replace", index=False)
+            logging.info(f"Data inserted successfully from {author_data_path} and {book_data_path}")
             print("Data inserted successfully.")
     except (sqlite3.Error, pd.errors.EmptyDataError, FileNotFoundError) as e:
+        logging.error(f"Error inserting data: {e}")
         print(f"Error inserting data: {e}")
 
 def main():

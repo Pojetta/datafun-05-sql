@@ -1,0 +1,41 @@
+2024-09-26 04:19:17,831 - INFO - Executed SQL from sql/create_tables.sql
+2024-09-26 04:19:17,836 - ERROR - Error executing SQL from sql/insert_records.sql: table authors has no column named first
+2024-09-26 04:19:17,838 - ERROR - Error executing SQL from sql/update_records.sql: near "s": syntax error
+2024-09-26 04:19:17,845 - ERROR - Error executing SQL from sql/delete_records.sql: no such column: name
+2024-09-26 04:19:17,847 - ERROR - Error executing SQL from sql/query_aggregation.sql: no such column: publication_year
+2024-09-26 04:19:17,851 - ERROR - Error executing SQL from sql/query_filter.sql: no such column: publication_year
+2024-09-26 04:19:17,853 - ERROR - Error executing SQL from sql/query_sorting.sql: no such column: publication_year
+2024-09-26 04:19:17,855 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 04:19:17,858 - ERROR - Error executing SQL from sql/query_join.sql: no such column: authors.name
+2024-09-26 04:37:07,572 - INFO - Executed SQL from sql/insert_records.sql
+2024-09-26 04:37:07,575 - ERROR - Error executing SQL from sql/update_records.sql: near "s": syntax error
+2024-09-26 04:37:07,594 - ERROR - Error executing SQL from sql/delete_records.sql: no such column: name
+2024-09-26 04:37:07,598 - INFO - Executed SQL from sql/query_aggregation.sql
+2024-09-26 04:37:07,601 - ERROR - Error executing SQL from sql/query_filter.sql: no such column: birth_year
+2024-09-26 04:37:07,603 - ERROR - Error executing SQL from sql/query_sorting.sql: no such column: name
+2024-09-26 04:37:07,604 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 04:37:07,605 - ERROR - Error executing SQL from sql/query_join.sql: no such column: authors.name
+2024-09-26 04:39:45,444 - INFO - Executed SQL from sql/insert_records.sql
+2024-09-26 04:39:45,447 - ERROR - Error executing SQL from sql/update_records.sql: near "s": syntax error
+2024-09-26 04:39:45,448 - INFO - Executed SQL from sql/delete_records.sql
+2024-09-26 04:39:45,450 - INFO - Executed SQL from sql/query_aggregation.sql
+2024-09-26 04:39:45,453 - INFO - Executed SQL from sql/query_filter.sql
+2024-09-26 04:39:45,455 - ERROR - Error executing SQL from sql/query_sorting.sql: no such column: name
+2024-09-26 04:39:45,466 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 04:39:45,469 - ERROR - Error executing SQL from sql/query_join.sql: no such column: authors.name
+2024-09-26 04:49:40,159 - INFO - Executed SQL from sql/insert_records.sql
+2024-09-26 04:49:40,162 - ERROR - Error executing SQL from sql/update_records.sql: near "s": syntax error
+2024-09-26 04:49:40,164 - INFO - Executed SQL from sql/delete_records.sql
+2024-09-26 04:49:40,166 - INFO - Executed SQL from sql/query_aggregation.sql
+2024-09-26 04:49:40,169 - INFO - Executed SQL from sql/query_filter.sql
+2024-09-26 04:49:40,171 - INFO - Executed SQL from sql/query_sorting.sql
+2024-09-26 04:49:40,173 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 04:49:40,183 - INFO - Executed SQL from sql/query_join.sql
+2024-09-26 04:54:51,258 - INFO - Executed SQL from sql/insert_records.sql
+2024-09-26 04:54:51,262 - INFO - Executed SQL from sql/update_records.sql
+2024-09-26 04:54:51,264 - INFO - Executed SQL from sql/delete_records.sql
+2024-09-26 04:54:51,268 - INFO - Executed SQL from sql/query_aggregation.sql
+2024-09-26 04:54:51,270 - INFO - Executed SQL from sql/query_filter.sql
+2024-09-26 04:54:51,276 - INFO - Executed SQL from sql/query_sorting.sql
+2024-09-26 04:54:51,278 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 04:54:51,279 - INFO - Executed SQL from sql/query_join.sql

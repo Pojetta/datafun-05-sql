@@ -2,8 +2,6 @@
 
 SELECT * 
 FROM books 
-WHERE publication_year > 1950;
+WHERE year_published > 1950;
 
-SELECT * 
-FROM authors 
-WHERE birth_year < 1900;
+

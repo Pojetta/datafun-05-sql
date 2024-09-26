@@ -1,0 +1,12 @@
+2024-09-26 04:18:50,945 - INFO - Folder already exists: sql
+2024-09-26 04:18:50,945 - INFO - Folder already exists: data
+2024-09-26 04:18:50,945 - INFO - Folder already exists: data
+2024-09-26 04:18:50,948 - INFO - Database created successfully at project.db
+2024-09-26 04:18:50,973 - INFO - Tables created successfully using sql/create_tables.sql
+2024-09-26 04:18:51,118 - INFO - Data inserted successfully from data/authors.csv and data/books.csv
+2024-09-26 04:29:05,247 - INFO - Folder already exists: sql
+2024-09-26 04:29:05,248 - INFO - Folder already exists: data
+2024-09-26 04:29:05,248 - INFO - Folder already exists: data
+2024-09-26 04:29:05,259 - INFO - Database created successfully at project.db
+2024-09-26 04:29:05,278 - INFO - Tables created successfully using sql/create_tables.sql
+2024-09-26 04:29:05,323 - INFO - Data inserted successfully from data/authors.csv and data/books.csv

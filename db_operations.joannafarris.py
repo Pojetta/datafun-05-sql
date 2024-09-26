@@ -34,7 +34,6 @@ def execute_sql_from_file(db_file_path, sql_file):
 def main():
     # Define paths for the SQL files
     sql_files = [
-        pathlib.Path("sql/create_tables.sql"),
         pathlib.Path("sql/insert_records.sql"),
         pathlib.Path("sql/update_records.sql"),
         pathlib.Path("sql/delete_records.sql"),
@@ -51,3 +50,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
