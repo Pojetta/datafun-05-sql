@@ -1,18 +1,22 @@
 # datafun-05-sql
 
-### Commands Used When Setting Up Project
-```git clone <your repo URL>```  
-```git add .```  
-```git commit -m "descriptive commit message"```  
-```git push -u origin main```  
-```python3 -m venv .venv```  
-```source .venv/bin/activate```  
-```python3 -m pip install -r requirements.txt```  
+## Project 5: Database Management with Python and SQLite
 
-# Project 5: Database Management with Python and SQLite
-
-## Overview
+### Overview
 Project 5 focuses on the creation and management of a database using Python and SQL, emphasizing interactions with the database through SQLite. This project includes two primary scripts: `db_initialize.joannafarris.py` and `db_operations.joannafarris.py`, which work together to set up the database and perform various operations.
+
+### Commands Used When Setting Up Project
+To set up the project, run the following commands:
+
+```zsh
+git clone <your repo URL>  
+git add .  
+git commit -m "descriptive commit message"  
+git push -u origin main  
+python3 -m venv .venv  
+source .venv/bin/activate  
+python3 -m pip install -r requirements.txt  
+```
 
 ### db_initialize.joannafarris.py
 This script is responsible for setting up the database. It verifies the existence of required directories, creates the database, and populates the tables with initial data from CSV files.
@@ -28,5 +32,3 @@ This script executes various SQL operations defined in separate SQL files. It pe
 
 **Key Functions:**
 - `execute_sql_from_file(db_file_path, sql_file)`: Executes SQL commands from a specified SQL file.
-
-

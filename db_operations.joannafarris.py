@@ -1,3 +1,17 @@
+"""
+db_operations.joannafarris.py: Database Operations Script
+
+This script handles various SQL operations on the SQLite database created by `db_initialize.joannafarris.py`. It can:
+1. Execute SQL commands from external .sql files.
+2. Perform operations such as updating, deleting, and querying records in the database.
+
+Usage:
+Run this script to perform different SQL operations on the database after it has been initialized.
+
+Functions:
+- `execute_sql_from_file(db_file_path, sql_file)`: Reads and executes SQL commands from a specified .sql file.
+"""
+
 import sqlite3
 import pathlib
 import logging

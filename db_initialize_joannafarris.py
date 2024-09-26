@@ -1,4 +1,21 @@
-'''Project 5 focuses on the creation and management of a database, integrating Python and SQL while emphasizing interactions with the database through SQLite. '''
+"""
+db_initialize.joannafarris.py: Database Initialization Script
+
+This script is responsible for setting up the SQLite database for the datafun-05-sql project. It performs the following tasks:
+1. Verifies the existence of required directories and creates them if needed.
+2. Creates the SQLite database file.
+3. Creates necessary database tables by executing SQL statements.
+4. Inserts initial data into the tables from CSV files.
+
+Usage:
+Run this script first to initialize the database and populate it with initial data.
+
+Functions:
+- `verify_and_create_folders(paths)`: Ensures required directories exist.
+- `create_database(db_path)`: Creates the SQLite database file.
+- `create_tables(db_path, sql_file_path)`: Creates database tables using SQL statements.
+- `insert_data_from_csv(db_path, author_data_path, book_data_path)`: Populates the tables with data from CSV files.
+"""
 
 # Import from Python Standard Library 
 import sqlite3

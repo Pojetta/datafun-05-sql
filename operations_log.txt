@@ -39,3 +39,11 @@
 2024-09-26 04:54:51,276 - INFO - Executed SQL from sql/query_sorting.sql
 2024-09-26 04:54:51,278 - INFO - Executed SQL from sql/query_group_by.sql
 2024-09-26 04:54:51,279 - INFO - Executed SQL from sql/query_join.sql
+2024-09-26 14:35:01,117 - INFO - Executed SQL from sql/insert_records.sql
+2024-09-26 14:35:01,139 - INFO - Executed SQL from sql/update_records.sql
+2024-09-26 14:35:01,142 - INFO - Executed SQL from sql/delete_records.sql
+2024-09-26 14:35:01,147 - INFO - Executed SQL from sql/query_aggregation.sql
+2024-09-26 14:35:01,156 - INFO - Executed SQL from sql/query_filter.sql
+2024-09-26 14:35:01,162 - INFO - Executed SQL from sql/query_sorting.sql
+2024-09-26 14:35:01,170 - INFO - Executed SQL from sql/query_group_by.sql
+2024-09-26 14:35:01,175 - INFO - Executed SQL from sql/query_join.sql
