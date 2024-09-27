@@ -1,6 +1,5 @@
 .vsode/ 
 .venv/
-sql-functions.txt
-db_initialize_farris.py
-.DS_Store
-.gitignore
+sql-functions.txt/
+.DS_Store/
+.gitignore/

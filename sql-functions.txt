@@ -1,0 +1,146 @@
+conn = THE CONNECTION OBJECT
+
+conn = sqlite3.connect("project.sqlite3")  # Open connection to the database
+cursor = conn.cursor()  # Create a cursor to execute SQL commands
+cursor.execute("CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)")  # Execute a SQL command
+conn.commit()  # Commit the changes to the database
+conn.close()  # Close the connection
+
+The Python function reads the contents of that .sql file and executes the SQL commands against the SQLite database. Here's how it works:
+
+1. Open the SQLite database:
+
+    with sqlite3.connect("project.sqlite3") as conn:
+    # You can now use conn to execute SQL queries
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users")
+
+# When the block ends, the connection is automatically closed
+* db_file refers to the SQLite database (e.g., project.sqlite3). This line opens a connection to that database.
+
+2. Locate and read the .sql file:
+
+     sql_file = pathlib.Path("sql", "create_tables.sql")
+     with open(sql_file, "r") as file:
+         sql_script = file.read()
+
+* sql_file refers to the path where your SQL file is stored (in this case, in a folder called sql).
+* file.read() reads all the SQL commands from the file and stores them in the variable sql_script.
+
+3. Execute the SQL commands from the file:
+
+      conn.executescript(sql_script)
+
+* This line executes all the SQL commands that were read from the .sql file. 
+* If the .sql file contains commands to create tables, they will be executed in the database.
+
+
+----
+3. Rule for using the . (dot) symbol with imported libraries or packages
+The . symbol is used to access attributes (like functions, methods, or variables) of an object or module. 
+
+The rule is:
+
+When you import a module (e.g., import sqlite3), all the functions, classes, and variables defined within that module are accessed using the dot notation:
+
+module.function()
+module.class()
+
+Once you create an instance of an object (like a connection object or a cursor object), you use the dot notation to access the methods of that object:
+
+object.method()
+object.property
+
+Examples of dot notation in action:
+
+Accessing a function from the sqlite3 module:
+
+conn = sqlite3.connect("project.sqlite3")  
+# Using dot to access the 'connect' function in the 'sqlite3' module
+
+Calling a method from a connection object (conn):
+
+cursor = conn.cursor()  # Using dot to access the 'cursor' method from the 'conn' object
+
+Calling a method from a cursor object (cursor):
+
+cursor.execute("SELECT * FROM users")  # Using dot to access the 'execute' method from the 'cursor' object
+
+Is there a general rule for using the dot symbol?
+Yes, the general rule is: The dot is used to access attributes (methods or properties) of a module, class, or object.
+When you import a module, you use module.function() or module.attribute.
+When you create an object, you use object.method() or object.property.
+
+Does each library or package do it differently?
+No, this is consistent across Python libraries. The dot notation is a core part of Python syntax and is used universally across all libraries and packages for accessing methods and attributes of modules or objects.
+Whether you are working with sqlite3, pandas, math, or any other library, you’ll use the dot notation to access functions and methods.
+
+Summary of Usage:
+sqlite3.connect(): Connects to the database.
+conn.cursor(): Creates a cursor object from the connection object.
+cursor.execute(): Executes SQL commands using the cursor object.
+The dot notation is used to access attributes or methods of an object, and it’s consistently used across Python libraries for the same purpose.
+
+-----------------------
+Recap:
+Class: A blueprint for creating objects (e.g., Person).
+Instance/Object: A specific realization of a class (e.g., a, b, c, or d, which represent specific people).
+Instance Variables: Variables (like self.name, self.age, etc.) that store data specific to each instance.
+So, when we say that "each object has its own unique values," we mean that each person (instance) has their own name, sex, and age, which are stored in their respective instance variables.
+
+Class = person
+Instance/object = unique Person = each unique instance of (name, sex, age)
+Instance Variable = self.name, self.sex, sef.age 
+Each unique Instance (each person) has their own unique values for their instance variables (ie their own name, sex, age) 
+
+
+-----
+# Define the database file path
+db_file_path = pathlib.Path("project.db")
+
+# This function executes SQL commands from a specified SQL file
+def execute_sql_from_file(db_file_path, sql_file):
+    """Read and execute SQL commands from a file."""
+    with sqlite3.connect(db_file_path) as conn:
+        with open(sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {sql_file}")
+
+# This function executes a single SQL statement
+def execute_single_sql_statement(db_path, sql_statement):
+    """Execute a single SQL statement."""
+    try:
+        with sqlite3.connect(db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute(sql_statement)
+            conn.commit()
+            print("SQL statement executed successfully.")
+    except sqlite3.Error as e:
+        print(f"Error executing SQL statement: {e}")
+
+# Define the SQL statement for deleting a book
+delete_from_where = """
+DELETE FROM books
+WHERE title = 'The Lord of the Rings';
+"""
+
+# Execute the SQL statement to delete the specified book
+execute_single_sql_statement(db_file_path, delete_from_where)
+
+# Function to check and print the contents of the books table
+def check_books(db_path):
+    """Check the contents of the books table."""
+    try:
+        with sqlite3.connect(db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM books")
+            rows = cursor.fetchall()
+            for row in rows:
+                print(row)
+    except sqlite3.Error as e:
+        print(f"Error reading from the database: {e}")
+
+# Check the contents of the books table after deletion
+check_books(db_file_path)
+
