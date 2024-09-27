@@ -3,4 +3,4 @@
 sql-functions.txt
 db_initialize_farris.py
 .DS_Store
-
+.gitignore
